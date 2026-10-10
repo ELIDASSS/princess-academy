@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=de<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👑 Магическая Академия Принцесс 👑</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600;700;900&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-gradient:linear-gradient(135deg,#ffd9e8 0%,#ffe5ec 25%,#ffc2d1 55%,#f8bbd0 100%);
+  --panel-bg:rgba(255,255,255,0.97);
+  --pink-magic:#ff758f;--pink-soft:#ffb3c1;--pink-dark:#ff4d6d;--pink-hot:#ff006e;
+  --purple-magic:#b14aed;--purple-light:#e0aaff;--gold-star:#ffb703;--mint:#64dfdf;
+  --text-main:#5a1530;--text-muted:#9c5f73;--bg-light:#fff5f8;
+  --border-radius-lg:35px;--border-radius-md:20px;
+  --shadow-pink:0 10px 30px rgba(255,117,143,0.25);
+  --shadow-hot:0 15px 40px rgba(255,0,110,0.3);
+  --transition-smooth:all 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+body{font-family:'Montserrat',sans-serif;background:linear-gradient(rgba(255,200,220,0.5),rgba(255,200,220,0.5)),url('7caf93f6d27a0c683a840e4f7feb8e21.jpg') center/cover fixed no-repeat;color:var(--text-main);min-height:100vh;padding-bottom:60px;overflow-x:hidden;}
+
+.bg-float{position:fixed;pointer-events:none;z-index:0;opacity:0.55;user-select:none;font-size:2rem;animation:floaty 9s infinite ease-in-out;}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-10deg) scale(1);}50%{transform:translateY(-30px) rotate(15deg) scale(1.15);}}
+.bg-float:nth-child(1){top:8%;left:4%;}
+.bg-float:nth-child(2){top:20%;right:5%;animation-delay:1.2s;font-size:2.4rem;}
+.bg-float:nth-child(3){top:60%;left:3%;animation-delay:2.4s;font-size:1.8rem;}
+.bg-float:nth-child(4){top:75%;right:6%;animation-delay:0.6s;}
+.bg-float:nth-child(5){top:45%;right:12%;animation-delay:3s;font-size:1.5rem;}
+.bg-float:nth-child(6){top:85%;left:15%;animation-delay:1.8s;font-size:2.2rem;}
+.bg-float:nth-child(7){top:35%;left:8%;animation-delay:4s;font-size:1.7rem;}
+.bg-float:nth-child(8){top:55%;right:3%;animation-delay:5s;font-size:2.1rem;}
+
+header{background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,229,236,0.95));backdrop-filter:blur(15px);padding:10px 12px 8px;text-align:center;box-shadow:0 8px 25px rgba(255,117,143,0.2);border-bottom:4px solid var(--pink-magic);position:sticky;top:0;z-index:1000;border-radius:0 0 var(--border-radius-md) var(--border-radius-md);transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);}
+.header-top{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:0;}
+.princess-avatar{width:52px;height:52px;border-radius:50%;border:3px solid var(--pink-magic);background:linear-gradient(135deg,#ffe5ec,#ffc2d1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;box-shadow:0 0 0 3px #fff,0 0 18px rgba(255,77,109,0.5);transition:var(--transition-smooth);overflow:hidden;position:relative;animation:pulseAvatar 3s infinite ease-in-out;flex-shrink:0;}
+@keyframes pulseAvatar{0%,100%{box-shadow:0 0 0 3px #fff,0 0 18px rgba(255,77,109,0.5);}50%{box-shadow:0 0 0 3px #fff,0 0 28px rgba(255,0,110,0.8);}}
+.princess-avatar:hover{transform:scale(1.08) rotate(-3deg);}
+.princess-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.princess-avatar::after{content:"📷";position:absolute;bottom:-2px;right:-2px;background:#fff;border-radius:50%;padding:1px 3px;font-size:0.55rem;box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+header h1{font-family:'Pacifico',cursive;color:var(--pink-dark);font-size:1.35rem;font-weight:400;letter-spacing:0.5px;text-shadow:1px 1px 0 #fff,2px 2px 0 rgba(255,117,143,0.2);margin:0;}
+.header-toggle-btn{background:linear-gradient(135deg,var(--pink-magic),var(--pink-hot));color:#fff;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;font-weight:900;box-shadow:0 4px 12px rgba(255,0,110,0.35);transition:var(--transition-smooth);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.header-toggle-btn:hover{transform:scale(1.1);}
+.header-toggle-btn.rotated{transform:rotate(180deg);}
+.header-collapsible{max-height:600px;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.175,0.885,0.32,1.275),opacity 0.3s,margin-top 0.3s;opacity:1;margin-top:8px;}
+header.collapsed .header-collapsible{max-height:0;opacity:0;margin-top:0;}
+header.collapsed{padding:6px 12px;}
+header.collapsed h1{font-size:1.05rem;}
+header.collapsed .princess-avatar{width:38px;height:38px;font-size:1.1rem;}
+.dashboard-wrapper{max-width:820px;margin:0 auto;background:rgba(255,255,255,0.75);padding:8px 12px;border-radius:var(--border-radius-md);border:2px dashed var(--pink-soft);}
+.bar-container{background:#ffe5ec;border-radius:20px;height:20px;position:relative;overflow:hidden;border:2px solid var(--pink-soft);box-shadow:inset 0 2px 6px rgba(255,117,143,0.15);}
+.bar-fill{background:linear-gradient(90deg,#ffb3c1,#ff758f,#ff006e,#b14aed);background-size:200% 100%;height:100%;width:0%;transition:width 0.7s cubic-bezier(0.1,0.8,0.3,1);box-shadow:0 0 12px rgba(255,0,110,0.6);animation:barShine 3s linear infinite;position:relative;}
+@keyframes barShine{0%{background-position:0 0;}100%{background-position:200% 0;}}
+.bar-label{position:absolute;width:100%;text-align:center;top:1px;font-weight:800;font-size:0.72rem;color:#5a1530;text-shadow:1px 1px 0 #fff;}
+.counters-row{display:flex;justify-content:center;gap:10px;margin-top:6px;font-size:0.82rem;font-weight:700;flex-wrap:wrap;}
+.stat-badge{background:#fff;padding:3px 10px;border-radius:12px;box-shadow:0 3px 8px rgba(255,117,143,0.15);border:1px solid var(--pink-soft);display:inline-flex;align-items:center;gap:4px;transition:var(--transition-smooth);}
+.stat-badge:hover{transform:translateY(-2px) scale(1.05);}
+.stat-badge.stars{color:#e8a000;background:linear-gradient(135deg,#fff,#fff8e1);}
+.stat-badge.score{color:var(--purple-magic);background:linear-gradient(135deg,#fff,#f3e5f5);}
+.stat-badge.crown{color:var(--pink-hot);background:linear-gradient(135deg,#fff,#ffe5ec);}
+
+nav{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin-top:8px;max-width:1100px;margin-left:auto;margin-right:auto;}
+nav button{background:#fff;border:2px solid var(--pink-soft);color:var(--text-main);padding:5px 10px;border-radius:14px;cursor:pointer;font-weight:700;font-size:0.7rem;font-family:'Montserrat',sans-serif;transition:var(--transition-smooth);box-shadow:0 3px 6px rgba(255,117,143,0.08);display:flex;align-items:center;gap:3px;}
+nav button:hover,nav button.active{background:linear-gradient(135deg,var(--pink-magic),var(--pink-hot));color:#fff;border-color:transparent;transform:translateY(-2px) scale(1.05);box-shadow:0 6px 15px rgba(255,0,110,0.4);}
+nav button.completed::after{content:"✓";margin-left:3px;color:#28a745;font-weight:900;}
+nav button.active.completed::after{color:#fff;}
+
+.main-container{max-width:1080px;margin:22px auto;padding:0 16px;position:relative;z-index:1;}
+.app-section{display:none;background:var(--panel-bg);padding:28px;border-radius:var(--border-radius-lg);box-shadow:var(--shadow-pink);border:4px solid #fff;animation:sectionIn 0.5s ease-out;position:relative;overflow:hidden;}
+.app-section::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,117,143,0.08) 0%,transparent 60%);pointer-events:none;}
+.app-section.active{display:block;}
+@keyframes sectionIn{from{opacity:0;transform:translateY(25px) scale(0.98);}to{opacity:1;transform:translateY(0) scale(1);}}
+h2{font-family:'Pacifico',cursive;color:var(--pink-dark);font-size:1.75rem;text-align:center;margin-bottom:6px;font-weight:400;text-shadow:1px 1px 0 #fff,2px 2px 0 rgba(255,117,143,0.15);}
+.section-subtitle{text-align:center;font-size:0.94rem;color:var(--text-muted);margin-bottom:18px;font-style:italic;}
+.hall-info{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;font-size:0.82rem;}
+.hall-info span{background:linear-gradient(135deg,#fff,#fff5f8);border:2px dashed var(--pink-soft);padding:5px 12px;border-radius:20px;font-weight:700;color:var(--pink-dark);}
+
+.navigation-action-btn{display:block;width:100%;max-width:380px;margin:24px auto 0 auto;background:linear-gradient(45deg,var(--pink-magic),var(--pink-hot),var(--purple-magic));background-size:200% 200%;color:#fff;border:none;padding:14px 28px;font-size:1.1rem;font-weight:700;font-family:'Comfortaa',cursive;border-radius:40px;cursor:pointer;box-shadow:var(--shadow-hot);transition:var(--transition-smooth);text-align:center;animation:btnGradient 4s ease infinite;}
+@keyframes btnGradient{0%,100%{background-position:0 50%;}50%{background-position:100% 50%;}}
+.navigation-action-btn:hover{transform:scale(1.04) translateY(-3px);box-shadow:0 15px 40px rgba(255,0,110,0.5);}
+.navigation-action-btn:active{transform:scale(0.98);}
+
+.translate-btn{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#fff,#fff5f8);border:2px dashed var(--pink-soft);color:var(--pink-dark);font-weight:700;padding:5px 12px;border-radius:20px;cursor:pointer;font-size:0.78rem;font-family:'Montserrat',sans-serif;transition:var(--transition-smooth);margin-top:6px;}
+.translate-btn:hover{background:linear-gradient(135deg,var(--pink-soft),var(--pink-magic));color:#fff;border-style:solid;border-color:var(--pink-hot);transform:scale(1.05);}
+.translate-btn.opened{background:linear-gradient(135deg,var(--pink-magic),var(--pink-hot));color:#fff;border-style:solid;}
+.translation-pop{max-height:0;overflow:hidden;opacity:0;transition:max-height 0.4s ease,opacity 0.3s ease,padding 0.3s ease;background:linear-gradient(135deg,#fff0f5,#ffe5ec);border-radius:14px;margin-top:8px;border:2px dashed var(--pink-soft);text-align:center;}
+.translation-pop.open{max-height:220px;opacity:1;padding:10px;}
+.translation-pop .tr-label{font-size:0.7rem;font-weight:700;color:var(--pink-dark);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+.translation-pop .tr-text{font-size:1.05rem;font-weight:800;color:#5a1530;}
+
+.cards-layout{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:16px;}
+.magic-card{background:linear-gradient(135deg,#fff 0%,#fff5f8 100%);border:3px solid var(--pink-soft);border-radius:var(--border-radius-md);padding:18px 14px 14px;text-align:center;cursor:pointer;transition:var(--transition-smooth);position:relative;box-shadow:0 6px 15px rgba(255,117,143,0.1);overflow:hidden;}
+.magic-card::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,0.7) 50%,transparent 60%);transform:translateX(-100%);transition:transform 0.6s;pointer-events:none;}
+.magic-card:hover::after{transform:translateX(100%);}
+.magic-card:hover{transform:translateY(-8px) rotate(-1deg);border-color:var(--pink-hot);box-shadow:0 18px 35px rgba(255,0,110,0.3);background:#fff;}
+.magic-card.is-read{border-color:var(--mint);background:linear-gradient(135deg,#f0fdfa,#e0fbfc);}
+.magic-card.is-read .card-eng-word{color:#00b4d8;}
+.card-emoji{font-size:2.4rem;display:block;margin-bottom:6px;transition:transform 0.3s;}
+.magic-card:hover .card-emoji{transform:scale(1.15) rotate(-8deg);}
+.card-eng-word{font-size:1.65rem;font-weight:900;color:var(--pink-dark);letter-spacing:0.3px;transition:color 0.3s;}
+.card-transcription{font-size:0.92rem;color:var(--purple-magic);font-weight:600;margin:4px 0 6px;}
+
+.pairs-board{display:flex;justify-content:space-between;gap:16px;margin-top:10px;}
+.pairs-col{display:flex;flex-direction:column;gap:10px;width:49%;}
+.pairs-col-title{text-align:center;font-family:'Pacifico',cursive;color:var(--pink-dark);font-size:1.05rem;margin-bottom:4px;}
+.pair-block{background:linear-gradient(135deg,#fff,#fff5f8);border:3px solid var(--pink-soft);padding:13px;text-align:center;border-radius:var(--border-radius-md);cursor:pointer;font-weight:700;font-size:1rem;box-shadow:0 4px 10px rgba(255,117,143,0.1);transition:all 0.25s;user-select:none;position:relative;}
+.pair-block:hover{transform:translateX(5px) scale(1.03);border-color:var(--pink-hot);}
+.pair-block.is-selected{background:linear-gradient(135deg,var(--purple-magic),var(--pink-hot));color:#fff;border-color:var(--pink-hot);transform:scale(1.05);box-shadow:0 8px 20px rgba(255,0,110,0.4);}
+.pair-block.is-matched{background:linear-gradient(135deg,#b5e2fa,#90e0ef);color:#0077b6;border-color:var(--mint);cursor:default;opacity:0.75;transform:none!important;}
+.pair-block.is-matched::after{content:"✓";position:absolute;top:4px;right:8px;color:#0077b6;font-weight:900;}
+.pair-block.shake{animation:shake 0.4s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+
+.story-book-container{max-width:820px;margin:0 auto;background:#fff;padding:22px;border-radius:var(--border-radius-md);border:3px double var(--pink-soft);box-shadow:inset 0 0 30px rgba(255,117,143,0.08);}
+.story-row{padding:14px;border-radius:14px;margin-bottom:10px;cursor:pointer;transition:all 0.25s;border-left:4px solid transparent;position:relative;background:linear-gradient(90deg,#fff,#fff8fa);}
+.story-row:hover{background:linear-gradient(90deg,#fff5f8,#fff);border-left-color:var(--pink-hot);transform:translateX(6px);}
+.story-row.is-played{border-left-color:var(--mint);background:#f0fdfa;}
+.story-row.is-played::after{content:"🔊";position:absolute;top:10px;right:12px;}
+.story-line-en{font-size:1.1rem;font-weight:700;color:var(--pink-dark);margin-bottom:4px;}
+
+.animals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
+.animal-card{background:linear-gradient(135deg,#fff,#fff0f5);border:3px solid var(--pink-soft);border-radius:var(--border-radius-md);padding:16px 12px;text-align:center;cursor:pointer;transition:var(--transition-smooth);box-shadow:0 6px 15px rgba(255,117,143,0.1);position:relative;overflow:hidden;}
+.animal-card:hover{transform:translateY(-6px) scale(1.03);border-color:var(--pink-hot);box-shadow:0 14px 30px rgba(255,0,110,0.3);}
+.animal-card.is-read{border-color:var(--mint);background:linear-gradient(135deg,#f0fdfa,#e0fbfc);}
+.animal-emoji{font-size:2.6rem;display:block;margin-bottom:5px;transition:transform 0.3s;}
+.animal-card:hover .animal-emoji{transform:scale(1.2) rotate(-8deg);}
+.animal-name{font-size:1.15rem;font-weight:900;color:var(--pink-dark);}
+.animal-tr{font-size:0.82rem;color:var(--purple-magic);font-weight:600;margin:3px 0 6px;}
+
+.quiz-holder{max-width:820px;margin:0 auto;background:#fff;padding:24px;border-radius:var(--border-radius-md);box-shadow:0 8px 25px rgba(255,117,143,0.15);border:3px solid #fff5f8;}
+.quiz-progress-mini{display:flex;gap:5px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
+.quiz-dot{width:11px;height:11px;border-radius:50%;background:#ffe5ec;border:2px solid var(--pink-soft);transition:all 0.3s;}
+.quiz-dot.active{background:var(--pink-hot);transform:scale(1.3);border-color:var(--pink-hot);}
+.quiz-dot.correct{background:#28a745;border-color:#28a745;}
+.quiz-dot.wrong{background:#dc3545;border-color:#dc3545;}
+.quiz-question-title{font-size:1.18rem;font-weight:700;margin-bottom:6px;line-height:1.4;color:var(--text-main);text-align:center;}
+.quiz-options-list{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
+.quiz-option-btn{background:linear-gradient(135deg,#fff,var(--bg-light));border:2px solid #ffe5ec;padding:14px 18px;border-radius:16px;cursor:pointer;font-size:0.98rem;text-align:left;transition:all 0.22s;font-weight:600;font-family:'Montserrat',sans-serif;position:relative;}
+.quiz-option-btn:hover:not(:disabled){border-color:var(--pink-hot);background:#fff;transform:translateX(6px);box-shadow:0 6px 15px rgba(255,0,110,0.2);}
+.quiz-option-btn:disabled{cursor:default;}
+.quiz-option-btn.state-correct{background:linear-gradient(135deg,#d4edda,#b8e6c1)!important;border-color:#28a745!important;color:#155724;font-weight:800;transform:scale(1.02);}
+.quiz-option-btn.state-wrong{background:linear-gradient(135deg,#f8d7da,#f5c2c7)!important;border-color:#dc3545!important;color:#721c24;}
+.quiz-option-btn.state-correct::after{content:" ✓";font-weight:900;position:absolute;right:16px;}
+.quiz-option-btn.state-wrong::after{content:" ✗";font-weight:900;position:absolute;right:16px;}
+
+.map-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:10px;}
+.map-card{background:linear-gradient(135deg,#fff,#fff5f8);border:3px solid var(--pink-soft);border-radius:var(--border-radius-md);padding:18px 14px;text-align:center;cursor:pointer;transition:var(--transition-smooth);box-shadow:0 8px 20px rgba(255,117,143,0.12);position:relative;overflow:hidden;}
+.map-card:hover{transform:translateY(-8px) scale(1.02);border-color:var(--pink-hot);box-shadow:0 20px 40px rgba(255,0,110,0.28);background:#fff;}
+.map-card-icon{font-size:2.8rem;display:block;margin-bottom:6px;transition:transform 0.3s;}
+.map-card:hover .map-card-icon{transform:scale(1.15) rotate(-8deg);}
+.map-card-title{font-family:'Pacifico',cursive;color:var(--pink-dark);font-size:1.1rem;margin-bottom:4px;font-weight:400;}
+.map-card-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.35;margin-bottom:10px;}
+.map-card-progress{background:#ffe5ec;height:8px;border-radius:10px;overflow:hidden;margin-top:6px;}
+.map-card-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--pink-magic),var(--pink-hot));transition:width 0.6s;}
+.map-card-badge{position:absolute;top:10px;right:10px;background:linear-gradient(135deg,var(--pink-hot),var(--purple-magic));color:#fff;font-size:0.68rem;font-weight:800;padding:3px 8px;border-radius:12px;}
+
+.princess-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.princess-card{background:linear-gradient(135deg,#fff,#fff8fb);border:3px solid var(--pink-soft);border-radius:var(--border-radius-md);padding:16px;text-align:center;cursor:pointer;transition:var(--transition-smooth);box-shadow:0 6px 15px rgba(255,117,143,0.12);}
+.princess-card:hover{transform:translateY(-6px) scale(1.02);border-color:var(--pink-hot);box-shadow:0 16px 32px rgba(255,0,110,0.28);}
+.princess-emoji{font-size:3rem;display:block;margin-bottom:6px;}
+.princess-name{font-family:'Pacifico',cursive;color:var(--pink-dark);font-size:1.15rem;margin-bottom:4px;font-weight:400;}
+.princess-from{font-size:0.78rem;color:var(--purple-magic);font-weight:700;margin-bottom:6px;}
+.princess-info{font-size:0.82rem;color:var(--text-muted);line-height:1.4;}
+
+.karaoke-box{max-width:820px;margin:0 auto;background:linear-gradient(135deg,#fff,#fff8fa);padding:22px;border-radius:var(--border-radius-md);border:3px double var(--pink-soft);text-align:center;}
+.karaoke-word{font-size:2.2rem;font-weight:900;color:var(--pink-hot);letter-spacing:2px;margin:10px 0;min-height:2.6rem;text-shadow:2px 2px 0 #fff;}
+.karaoke-word .letter{display:inline-block;transition:all 0.3s;}
+.karaoke-word .letter.active{color:var(--purple-magic);transform:translateY(-8px) scale(1.3);text-shadow:0 0 20px rgba(177,74,237,0.7);}
+.karaoke-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.karaoke-btn{background:linear-gradient(135deg,var(--pink-magic),var(--pink-hot));color:#fff;border:none;padding:10px 20px;border-radius:25px;font-weight:700;font-family:'Comfortaa',cursive;cursor:pointer;font-size:0.92rem;box-shadow:0 6px 15px rgba(255,0,110,0.3);transition:var(--transition-smooth);}
+.karaoke-btn:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 10px 20px rgba(255,0,110,0.45);}
+.karaoke-btn.secondary{background:#fff;color:var(--pink-dark);border:2px solid var(--pink-soft);}
+.karaoke-progress-bar{background:#ffe5ec;height:8px;border-radius:10px;overflow:hidden;margin-top:14px;}
+.karaoke-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--pink-magic),var(--pink-hot));transition:width 0.3s;}
+
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:640px;margin:0 auto;}
+.memory-card{aspect-ratio:1;perspective:1000px;cursor:pointer;}
+.memory-inner{position:relative;width:100%;height:100%;transition:transform 0.5s;transform-style:preserve-3d;}
+.memory-card.flipped .memory-inner{transform:rotateY(180deg);}
+.memory-front,.memory-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:900;border:3px solid var(--pink-soft);box-shadow:0 4px 12px rgba(255,117,143,0.15);}
+.memory-front{background:linear-gradient(135deg,var(--pink-magic),var(--pink-hot));color:#fff;font-size:1.8rem;}
+.memory-back{background:#fff;transform:rotateY(180deg);font-size:0.9rem;color:var(--pink-dark);text-align:center;padding:6px;flex-direction:column;gap:3px;}
+.memory-back .mem-emoji{font-size:1.6rem;}
+.memory-card.matched .memory-inner{animation:memPop 0.5s;}
+.memory-card.matched .memory-back{border-color:var(--mint);background:linear-gradient(135deg,#f0fdfa,#e0fbfc);color:#0077b6;}
+@keyframes memPop{0%,100%{transform:rotateY(180deg) scale(1);}50%{transform:rotateY(180deg) scale(1.1);}}
+
+.tf-question{text-align:center;margin:16px 0;}
+.tf-text{font-size:1.2rem;font-weight:800;color:var(--pink-dark);padding:20px;background:linear-gradient(135deg,#fff,#fff5f8);border:3px dashed var(--pink-soft);border-radius:var(--border-radius-md);margin-bottom:18px;}
+.tf-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.tf-btn{padding:16px 38px;font-size:1.2rem;font-weight:900;border-radius:25px;cursor:pointer;border:3px solid;transition:var(--transition-smooth);font-family:'Comfortaa',cursive;}
+.tf-btn.true-btn{background:linear-gradient(135deg,#d4edda,#b8e6c1);border-color:#28a745;color:#155724;}
+.tf-btn.false-btn{background:linear-gradient(135deg,#f8d7da,#f5c2c7);border-color:#dc3545;color:#721c24;}
+.tf-btn:hover{transform:scale(1.08) translateY(-3px);box-shadow:0 12px 25px rgba(0,0,0,0.15);}
+.tf-btn:disabled{opacity:0.5;cursor:default;transform:none;}
+
+.toast{position:fixed;top:100px;left:50%;transform:translateX(-50%) translateY(-30px);background:linear-gradient(135deg,var(--pink-hot),var(--purple-magic));color:#fff;padding:12px 24px;border-radius:30px;font-weight:700;font-size:0.95rem;box-shadow:0 10px 30px rgba(255,0,110,0.5);z-index:2000;opacity:0;pointer-events:none;transition:all 0.35s cubic-bezier(0.175,0.885,0.32,1.275);border:2px solid #fff;max-width:90vw;text-align:center;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.confetti{position:fixed;width:12px;height:12px;top:-20px;z-index:1999;pointer-events:none;border-radius:2px;animation:confettiFall linear forwards;}
+@keyframes confettiFall{to{transform:translateY(105vh) rotate(720deg);opacity:0;}}
+
+.modal-backdrop{position:fixed;inset:0;background:rgba(90,21,48,0.7);backdrop-filter:blur(6px);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-backdrop.show{display:flex;}
+.modal-box{background:linear-gradient(135deg,#fff,#fff5f8);padding:26px;border-radius:var(--border-radius-lg);max-width:420px;width:100%;text-align:center;box-shadow:0 30px 60px rgba(0,0,0,0.4);border:4px solid var(--pink-magic);animation:victoryPop 0.4s ease-out;}
+.modal-box h3{font-family:'Pacifico',cursive;color:var(--pink-dark);font-size:1.5rem;margin-bottom:10px;font-weight:400;}
+.modal-box p{color:var(--text-muted);font-size:0.9rem;margin-bottom:18px;line-height:1.5;}
+.modal-box input[type=file]{width:100%;padding:10px;border:2px dashed var(--pink-soft);border-radius:16px;background:#fff;margin-bottom:14px;font-family:inherit;cursor:pointer;font-size:0.85rem;}
+.modal-box input[type=file]:hover{border-color:var(--pink-hot);}
+.modal-btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.modal-btn{padding:11px 22px;border:none;border-radius:25px;font-weight:700;font-family:'Comfortaa',cursive;cursor:pointer;font-size:0.9rem;transition:var(--transition-smooth);}
+.modal-btn.primary{background:linear-gradient(135deg,var(--pink-hot),var(--purple-magic));color:#fff;box-shadow:0 8px 20px rgba(255,0,110,0.4);}
+.modal-btn.secondary{background:#fff;color:var(--pink-dark);border:2px solid var(--pink-soft);}
+.modal-btn:hover{transform:translateY(-2px) scale(1.04);}
+
+.victory-box{text-align:center;padding:20px;animation:victoryPop 0.6s ease-out;}
+@keyframes victoryPop{0%{transform:scale(0.7);opacity:0;}60%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+.victory-crown{font-size:4.5rem;display:block;margin:10px 0 18px;animation:spin 3s linear infinite;}
+@keyframes spin{0%{transform:rotate(-8deg) scale(1);}50%{transform:rotate(8deg) scale(1.15);}100%{transform:rotate(-8deg) scale(1);}}
+
+@media(max-width:600px){
+  header h1{font-size:1.05rem;}
+  .princess-avatar{width:44px;height:44px;font-size:1.3rem;}
+  .pairs-board{flex-direction:column;}
+  .pairs-col{width:100%;}
+  h2{font-size:1.35rem;}
+  .app-section{padding:18px 12px;}
+  .stat-badge{font-size:0.72rem;padding:3px 8px;}
+  .memory-grid{grid-template-columns:repeat(3,1fr);}
+  .card-eng-word{font-size:1.3rem;}
+  .karaoke-word{font-size:1.6rem;}
+  nav button{font-size:0.65rem;padding:5px 8px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-float">💖</div>
+<div class="bg-float">👑</div>
+<div class="bg-float">🌸</div>
+<div class="bg-float">✨</div>
+<div class="bg-float">🦄</div>
+<div class="bg-float">💎</div>
+<div class="bg-float">🎀</div>
+<div class="bg-float">🌟</div>
+
+<header id="mainHeader">
+  <div class="header-top">
+    <div class="princess-avatar" id="avatarBox" onclick="openAvatarModal()" title="Нажми, чтобы поставить своё фото!">👸</div>
+    <h1>Магическая Академия Принцесс</h1>
+    <button class="header-toggle-btn" onclick="toggleHeader()" id="headerToggleBtn" title="Свернуть/развернуть">⬇️</button>
+  </div>
+  <div class="header-collapsible" id="headerCollapsible">
+    <div class="dashboard-wrapper">
+      <div class="bar-container">
+        <div class="bar-fill" id="progressBar"></div>
+        <div class="bar-label" id="progressLabel">Progress: 0%</div>
+      </div>
+      <div class="counters-row">
+        <div class="stat-badge stars">✨ Stars: <span id="starsCount">0</span></div>
+        <div class="stat-badge score">🏆 Points: <span id="scoreCount">0</span></div>
+        <div class="stat-badge crown">👑 Rank: <span id="rankLabel">Новичок</span></div>
+      </div>
+    </div>
+    <nav id="mainNav">
+      <button data-section="view-map"      onclick="switchAppSection('view-map')">🗺️ Карта</button>
+      <button data-section="view-princess" onclick="switchAppSection('view-princess')">👸 Принцессы</button>
+      <button data-section="view-lesson1"  onclick="switchAppSection('view-lesson1')">🏰 Замок</button>
+      <button data-section="view-family"   onclick="switchAppSection('view-family')">👨‍👩‍👧 Семья</button>
+      <button data-section="view-food"     onclick="switchAppSection('view-food')">🍰 Еда</button>
+      <button data-section="view-colors"   onclick="switchAppSection('view-colors')">🎨 Цвета</button>
+      <button data-section="view-numbers"  onclick="switchAppSection('view-numbers')">🔢 Цифры</button>
+      <button data-section="view-lesson2"  onclick="switchAppSection('view-lesson2')">👗 Гардероб</button>
+      <button data-section="view-lesson3"  onclick="switchAppSection('view-lesson3')">🦄 Животные</button>
+      <button data-section="view-game1"    onclick="switchAppSection('view-game1')">🎯 Парочки</button>
+      <button data-section="view-story"    onclick="switchAppSection('view-story')">📖 Сказка</button>
+      <button data-section="view-memory"   onclick="switchAppSection('view-memory')">🧠 Мемори</button>
+      <button data-section="view-tf"       onclick="switchAppSection('view-tf')">💭 True/False</button>
+      <button data-section="view-karaoke"  onclick="switchAppSection('view-karaoke')">🎤 Караоке</button>
+      <button data-section="view-quiz"     onclick="switchAppSection('view-quiz')">🔮 Викторина</button>
+    </nav>
+  </div>
+</header>
+
+<div class="main-container">
+
+  <section class="app-section active" id="view-map">
+    <h2>🗺️ Карта Магической Академии</h2>
+    <p class="section-subtitle">Выбирай зал и отправляйся в приключение! ✨</p>
+    <div class="map-grid" id="mapGrid"></div>
+  </section>
+
+  <section class="app-section" id="view-princess">
+    <h2>👸 Галерея Принцесс Диснея</h2>
+    <p class="section-subtitle">Познакомься с 10 принцессами и их историями!</p>
+    <div class="hall-info"><span>👑 10 принцесс</span><span>🌸 Их семьи</span><span>🔊 Озвучка</span></div>
+    <div class="princess-grid" id="princessGrid"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-lesson1')">В Замок 🏰</button>
+  </section>
+
+  <section class="app-section" id="view-lesson1">
+    <h2>🏰 Зал: Волшебный Замок</h2>
+    <p class="section-subtitle">12 слов о замке! Нажимай на карточки 👂</p>
+    <div class="hall-info"><span>📚 12 слов</span><span>⭐ 20 очков</span><span>🔊 Аудио</span></div>
+    <div class="cards-layout" id="lesson1Grid"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-family')">К Семье 👨‍👩‍👧</button>
+  </section>
+
+  <section class="app-section" id="view-family">
+    <h2>👨‍👩‍👧 Зал: Королевская Семья</h2>
+    <p class="section-subtitle">Как называются члены семьи на английском? 12 слов!</p>
+    <div class="hall-info"><span>📚 12 слов</span><span>⭐ 20 очков</span><span>🔊 Аудио</span></div>
+    <div class="cards-layout" id="familyGrid"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-food')">К Еде 🍰</button>
+  </section>
+
+  <section class="app-section" id="view-food">
+    <h2>🍰 Зал: Королевский Пир</h2>
+    <p class="section-subtitle">Вкусные слова про еду и напитки! 12 слов 🍓</p>
+    <div class="hall-info"><span>📚 12 слов</span><span>⭐ 20 очков</span><span>🔊 Аудио</span></div>
+    <div class="cards-layout" id="foodGrid"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-colors')">К Цветам 🎨</button>
+  </section>
+
+  <section class="app-section" id="view-colors">
+    <h2>🎨 Зал: Магические Цвета</h2>
+    <p class="section-subtitle">Учи цвета радуги и волшебства! 12 слов 🌈</p>
+    <div class="hall-info"><span>📚 12 слов</span><span>⭐ 20 очков</span><span>🔊 Аудио</span></div>
+    <div class="cards-layout" id="colorsGrid"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-numbers')">К Цифрам 🔢</button>
+  </section>
+
+  <section class="app-section" id="view-numbers">
+    <h2>🔢 Зал: Волшебные Цифры</h2>
+    <p class="section-subtitle">Считаем до 12 на английском! 🔢</p>
+    <div class="hall-info"><span>📚 12 слов</span><span>⭐ 20 очков</span><span>🔊 Аудио</span></div>
+    <div class="cards-layout" id="numbersGrid"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-lesson2')">К Гардеробу 👗</button>
+  </section>
+
+  <section class="app-section" id="view-lesson2">
+    <h2>👗 Зал: Гардероб Золушки</h2>
+    <p class="section-subtitle">Одежда и украшения принцесс! 12 слов 💎</p>
+    <div class="hall-info"><span>📚 12 слов</span><span>⭐ 20 очков</span><span>🔊 Аудио</span></div>
+    <div class="cards-layout" id="lesson2Grid"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-lesson3')">К Животным 🦄</button>
+  </section>
+
+  <section class="app-section" id="view-lesson3">
+    <h2>🦄 Зал: Лесные Друзья</h2>
+    <p class="section-subtitle">Друзья Рапунцель и Ариэль! 12 животных 🐰</p>
+    <div class="hall-info"><span>📚 12 слов</span><span>⭐ 20 очков</span><span>🔊 Аудио</span></div>
+    <div class="animals-grid" id="lesson3Grid"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-game1')">В Парочки 🎯</button>
+  </section>
+
+  <section class="app-section" id="view-game1">
+    <h2>🎯 Зал: Волшебные Парочки</h2>
+    <p class="section-subtitle">Соедини английские слова со значениями! 12 пар 🎲</p>
+    <div class="hall-info"><span>🎲 Случайный порядок</span><span>⭐ 25 очков</span><span>💖 12 пар</span></div>
+    <div class="pairs-board">
+      <div class="pairs-col"><div class="pairs-col-title">English 🇬🇧</div><div id="pairs-eng"></div></div>
+      <div class="pairs-col"><div class="pairs-col-title">Русский 🇷🇺</div><div id="pairs-rus"></div></div>
+    </div>
+    <button class="navigation-action-btn" id="pairs-next" style="display:none;" onclick="switchAppSection('view-story')">К Сказке 📖</button>
+  </section>
+
+  <section class="app-section" id="view-story">
+    <h2>📖 Зал: Сказка Русалочки</h2>
+    <p class="section-subtitle">16 предложений про Ариэль! Нажми на строку 👂</p>
+    <div class="hall-info"><span>📖 16 предложений</span><span>🔊 Озвучка</span><span>🌸 Перевод в окошке</span></div>
+    <div class="story-book-container" id="storyWrapper"></div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-memory')">В Мемори 🧠</button>
+  </section>
+
+  <section class="app-section" id="view-memory">
+    <h2>🧠 Зал: Магическое Мемори</h2>
+    <p class="section-subtitle">Найди все пары карточек! 16 карточек 🎴</p>
+    <div class="hall-info"><span>🎴 16 карточек</span><span>⭐ 30 очков</span><span>🧠 Память</span></div>
+    <div class="memory-grid" id="memoryGrid"></div>
+    <button class="navigation-action-btn" id="memNext" style="display:none;" onclick="switchAppSection('view-tf')">К True/False 💭</button>
+  </section>
+
+  <section class="app-section" id="view-tf">
+    <h2>💭 Зал: Правда или Ложь?</h2>
+    <p class="section-subtitle">15 утверждений про принцесс! Правда или ложь? 🤔</p>
+    <div class="hall-info"><span>❓ 15 вопросов</span><span>⭐ 35 очков</span><span>💖 Про принцесс</span></div>
+    <div id="tfWrapper"></div>
+  </section>
+
+  <section class="app-section" id="view-karaoke">
+    <h2>🎤 Зал: Магическое Караоке</h2>
+    <p class="section-subtitle">Слушай слова по буквам и повторяй вслух! 🎵</p>
+    <div class="hall-info"><span>🎵 15 слов</span><span>⭐ 15 очков</span><span>🎤 Читаем вслух</span></div>
+    <div class="karaoke-box">
+      <div style="font-size:2.6rem;margin-bottom:6px;" id="karaokeEmoji">🎤</div>
+      <div class="karaoke-word" id="karaokeWord">Нажми PLAY 🎵</div>
+      <div style="font-size:0.92rem;color:var(--purple-magic);font-weight:600;" id="karaokeTr">—</div>
+      <div class="karaoke-progress-bar"><div class="karaoke-progress-fill" id="karaokeProgress"></div></div>
+      <div class="karaoke-controls">
+        <button class="karaoke-btn" onclick="karaokePlay()">▶️ PLAY</button>
+        <button class="karaoke-btn secondary" onclick="karaokeNext()">➡️ Дальше</button>
+        <button class="karaoke-btn secondary" onclick="karaokeToggleTr()">🌸 Перевод</button>
+      </div>
+      <div style="margin-top:12px;font-size:0.82rem;color:var(--text-muted);" id="karaokeCounter">Слово 1 из 15</div>
+    </div>
+    <button class="navigation-action-btn" onclick="switchAppSection('view-quiz')">К Викторине 🔮</button>
+  </section>
+
+  <section class="app-section" id="view-quiz">
+    <h2>🔮 Зал: Королевская Викторина</h2>
+    <p class="section-subtitle">15 вопросов про принцесс и их истории! 👑</p>
+    <div class="hall-info"><span>❓ 15 вопросов</span><span>⭐ 50 очков</span><span>💖 Финал!</span></div>
+    <div class="quiz-holder" id="quizTarget"></div>
+  </section>
+
+</div>
+
+<div class="modal-backdrop" id="avatarModal">
+  <div class="modal-box">
+    <h3>Поставь своё фото 👑</h3>
+    <p>Загрузи любую картинку — она появится в аватарке принцессы!</p>
+    <input type="file" id="avatarInput" accept="image/*">
+    <div class="modal-btn-row">
+      <button class="modal-btn secondary" onclick="closeAvatarModal()">Отмена</button>
+      <button class="modal-btn primary" onclick="saveAvatar()">Сохранить 💖</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PRINCESSES = [
+  {emoji:'🧜‍♀️', name:'Ariel', from:'The Little Mermaid', info:'Русалочка с красными волосами. Дочь царя Тритона. Любит петь и коллекционировать вещи людей.', family:'Father: King Triton, Sisters: 6', voice:'Ariel is a mermaid princess.'},
+  {emoji:'🫅', name:'Cinderella', from:'Cinderella', info:'Добрая девушка, которая жила с мачехой и двумя сёстрами. Потеряла хрустальную туфельку на балу.', family:'Stepmother, 2 stepsisters', voice:'Cinderella has a glass shoe.'},
+  {emoji:'🧊', name:'Elsa', from:'Frozen', info:'Королева льда и снега. У неё магические силы. Старшая сестра Анны.', family:'Sister: Anna, Parents: King & Queen', voice:'Elsa has magic ice powers.'},
+  {emoji:'💮', name:'Anna', from:'Frozen', info:'Младшая сестра Эльсы. Весёлая и смелая. Дружит с Кристоффом и оленем Свеном.', family:'Sister: Elsa', voice:'Anna is a brave princess.'},
+  {emoji:'📚', name:'Belle', from:'Beauty and the Beast', info:'Умная принцесса, которая любит книги. Подружилась с Чудовищем и полюбила его.', family:'Father: Maurice', voice:'Belle loves to read books.'},
+  {emoji:'🧞‍♀️', name:'Jasmine', from:'Aladdin', info:'Принцесса Аграбы. У неё есть тигр Раджа и ковёр-самолёт. Любит Аладдина.', family:'Father: Sultan', voice:'Jasmine has a magic carpet.'},
+  {emoji:'💇‍♀️', name:'Rapunzel', from:'Tangled', info:'Принцесса с волшебными длинными волосами. Жила в башне. Дружит с хамелеоном Паскалем.', family:'Parents: King & Queen', voice:'Rapunzel has long magic hair.'},
+  {emoji:'🍎', name:'Snow White', from:'Snow White', info:'Принцесса с кожей белой как снег. Жила с 7 гномами в лесу. Дружит с птичками.', family:'7 Dwarfs', voice:'Snow White has seven dwarfs.'},
+  {emoji:'🌊', name:'Moana', from:'Moana', info:'Дочь вождя острова Мотонуи. Отправилась в океан спасать свой народ. Дружит с Мауи.', family:'Father: Chief Tui, Mother: Sina', voice:'Moana loves the ocean.'},
+  {emoji:'🥷', name:'Mulan', from:'Mulan', info:'Смелая девушка, которая переоделась воином, чтобы спасти отца. Дружит с драконом Мушу.', family:'Father: Fa Zhou, Mother: Fa Li', voice:'Mulan is a brave warrior.'}
+];
+
+const LESSON1_WORDS = [
+  {en:'Castle', tr:'[ˈkɑːsl]', ru:'Замок', emoji:'🏰'},
+  {en:'Crown', tr:'[kraʊn]', ru:'Корона', emoji:'👑'},
+  {en:'Throne', tr:'[θroʊn]', ru:'Трон', emoji:'🪑'},
+  {en:'Princess', tr:'[prɪnˈses]', ru:'Принцесса', emoji:'👸'},
+  {en:'Prince', tr:'[prɪns]', ru:'Принц', emoji:'🤴'},
+  {en:'King', tr:'[kɪŋ]', ru:'Король', emoji:'👑'},
+  {en:'Queen', tr:'[kwiːn]', ru:'Королева', emoji:'👑'},
+  {en:'Tower', tr:'[ˈtaʊər]', ru:'Башня', emoji:'🗼'},
+  {en:'Garden', tr:'[ˈɡɑːrdn]', ru:'Сад', emoji:'🌷'},
+  {en:'Palace', tr:'[ˈpæləs]', ru:'Дворец', emoji:'🏛️'},
+  {en:'Knight', tr:'[naɪt]', ru:'Рыцарь', emoji:'⚔️'},
+  {en:'Dragon', tr:'[ˈdræɡən]', ru:'Дракон', emoji:'🐉'}
+];
+
+const FAMILY_WORDS = [
+  {en:'Mother', tr:'[ˈmʌðər]', ru:'Мама', emoji:'👩'},
+  {en:'Father', tr:'[ˈfɑːðər]', ru:'Папа', emoji:'👨'},
+  {en:'Sister', tr:'[ˈsɪstər]', ru:'Сестра', emoji:'👧'},
+  {en:'Brother', tr:'[ˈbrʌðər]', ru:'Брат', emoji:'👦'},
+  {en:'Grandmother', tr:'[ˈɡrænmʌðər]', ru:'Бабушка', emoji:'👵'},
+  {en:'Grandfather', tr:'[ˈɡrænfɑːðər]', ru:'Дедушка', emoji:'👴'},
+  {en:'Baby', tr:'[ˈbeɪbi]', ru:'Малыш', emoji:'👶'},
+  {en:'Aunt', tr:'[ænt]', ru:'Тётя', emoji:'👩‍🦰'},
+  {en:'Uncle', tr:'[ˈʌŋkl]', ru:'Дядя', emoji:'👨‍🦱'},
+  {en:'Cousin', tr:'[ˈkʌzn]', ru:'Кузен', emoji:'🧒'},
+  {en:'Family', tr:'[ˈfæməli]', ru:'Семья', emoji:'👨‍👩‍👧'},
+  {en:'Love', tr:'[lʌv]', ru:'Любовь', emoji:'❤️'}
+];
+
+const FOOD_WORDS = [
+  {en:'Apple', tr:'[ˈæpl]', ru:'Яблоко', emoji:'🍎'},
+  {en:'Cake', tr:'[keɪk]', ru:'Тортик', emoji:'🍰'},
+  {en:'Candy', tr:'[ˈkændi]', ru:'Конфета', emoji:'🍬'},
+  {en:'Ice cream', tr:'[aɪs kriːm]', ru:'Мороженое', emoji:'🍦'},
+  {en:'Strawberry', tr:'[ˈstrɔːberi]', ru:'Клубника', emoji:'🍓'},
+  {en:'Chocolate', tr:'[ˈtʃɑːklət]', ru:'Шоколад', emoji:'🍫'},
+  {en:'Cookie', tr:'[ˈkʊki]', ru:'Печенье', emoji:'🍪'},
+  {en:'Tea', tr:'[tiː]', ru:'Чай', emoji:'🍵'},
+  {en:'Milk', tr:'[mɪlk]', ru:'Молоко', emoji:'🥛'},
+  {en:'Juice', tr:'[dʒuːs]', ru:'Сок', emoji:'🧃'},
+  {en:'Bread', tr:'[bred]', ru:'Хлеб', emoji:'🍞'},
+  {en:'Honey', tr:'[ˈhʌni]', ru:'Мёд', emoji:'🍯'}
+];
+
+const COLORS_WORDS = [
+  {en:'Pink', tr:'[pɪŋk]', ru:'Розовый', emoji:'🌸'},
+  {en:'Purple', tr:'[ˈpɜːrpl]', ru:'Фиолетовый', emoji:'💜'},
+  {en:'Red', tr:'[red]', ru:'Красный', emoji:'❤️'},
+  {en:'Blue', tr:'[bluː]', ru:'Синий', emoji:'💙'},
+  {en:'Yellow', tr:'[ˈjeloʊ]', ru:'Жёлтый', emoji:'💛'},
+  {en:'Green', tr:'[ɡriːn]', ru:'Зелёный', emoji:'💚'},
+  {en:'Orange', tr:'[ˈɔːrɪndʒ]', ru:'Оранжевый', emoji:'🧡'},
+  {en:'White', tr:'[waɪt]', ru:'Белый', emoji:'🤍'},
+  {en:'Black', tr:'[blæk]', ru:'Чёрный', emoji:'🖤'},
+  {en:'Gold', tr:'[ɡoʊld]', ru:'Золотой', emoji:'🌟'},
+  {en:'Silver', tr:'[ˈsɪlvər]', ru:'Серебряный', emoji:'✨'},
+  {en:'Rainbow', tr:'[ˈreɪnboʊ]', ru:'Радуга', emoji:'🌈'}
+];
+
+const NUMBERS_WORDS = [
+  {en:'One', tr:'[wʌn]', ru:'Один', emoji:'1️⃣'},
+  {en:'Two', tr:'[tuː]', ru:'Два', emoji:'2️⃣'},
+  {en:'Three', tr:'[θriː]', ru:'Три', emoji:'3️⃣'},
+  {en:'Four', tr:'[fɔːr]', ru:'Четыре', emoji:'4️⃣'},
+  {en:'Five', tr:'[faɪv]', ru:'Пять', emoji:'5️⃣'},
+  {en:'Six', tr:'[sɪks]', ru:'Шесть', emoji:'6️⃣'},
+  {en:'Seven', tr:'[ˈsevn]', ru:'Семь', emoji:'7️⃣'},
+  {en:'Eight', tr:'[eɪt]', ru:'Восемь', emoji:'8️⃣'},
+  {en:'Nine', tr:'[naɪn]', ru:'Девять', emoji:'9️⃣'},
+  {en:'Ten', tr:'[ten]', ru:'Десять', emoji:'🔟'},
+  {en:'Eleven', tr:'[ɪˈlevn]', ru:'Одиннадцать', emoji:'1️⃣1️⃣'},
+  {en:'Twelve', tr:'[twelv]', ru:'Двенадцать', emoji:'1️⃣2️⃣'}
+];
+
+const LESSON2_WORDS = [
+  {en:'Gown', tr:'[ɡaʊn]', ru:'Бальное платье', emoji:'👗'},
+  {en:'Shoes', tr:'[ʃuːz]', ru:'Туфельки', emoji:'👠'},
+  {en:'Ring', tr:'[rɪŋ]', ru:'Колечко', emoji:'💍'},
+  {en:'Dress', tr:'[dres]', ru:'Платье', emoji:'👚'},
+  {en:'Hat', tr:'[hæt]', ru:'Шляпка', emoji:'👒'},
+  {en:'Gloves', tr:'[ɡlʌvz]', ru:'Перчатки', emoji:'🧤'},
+  {en:'Necklace', tr:'[ˈnekləs]', ru:'Ожерелье', emoji:'📿'},
+  {en:'Cape', tr:'[keɪp]', ru:'Плащ', emoji:'🧥'},
+  {en:'Mirror', tr:'[ˈmɪrər]', ru:'Зеркало', emoji:'🪞'},
+  {en:'Crown', tr:'[kraʊn]', ru:'Корона', emoji:'👑'},
+  {en:'Bow', tr:'[boʊ]', ru:'Бантик', emoji:'🎀'},
+  {en:'Umbrella', tr:'[ʌmˈbrelə]', ru:'Зонтик', emoji:'☂️'}
+];
+
+const LESSON3_WORDS = [
+  {en:'Deer', tr:'[dɪr]', ru:'Оленёнок', emoji:'🦌'},
+  {en:'Rabbit', tr:'[ˈræbɪt]', ru:'Кролик', emoji:'🐰'},
+  {en:'Bird', tr:'[bɜːrd]', ru:'Птичка', emoji:'🐦'},
+  {en:'Fox', tr:'[fɑːks]', ru:'Лисёнок', emoji:'🦊'},
+  {en:'Owl', tr:'[aʊl]', ru:'Сова', emoji:'🦉'},
+  {en:'Frog', tr:'[frɔːɡ]', ru:'Лягушка', emoji:'🐸'},
+  {en:'Butterfly', tr:'[ˈbʌtərflaɪ]', ru:'Бабочка', emoji:'🦋'},
+  {en:'Squirrel', tr:'[ˈskwɜːrəl]', ru:'Белочка', emoji:'🐿️'},
+  {en:'Hedgehog', tr:'[ˈhedʒhɔːɡ]', ru:'Ёжик', emoji:'🦔'},
+  {en:'Fish', tr:'[fɪʃ]', ru:'Рыбка', emoji:'🐠'},
+  {en:'Crab', tr:'[kræb]', ru:'Краб', emoji:'🦀'},
+  {en:'Seagull', tr:'[ˈsiːɡʌl]', ru:'Чайка', emoji:'🕊️'}
+];
+
+const PAIRS_WORDS = [
+  {en:'Castle', ru:'Замок'},
+  {en:'Crown', ru:'Корона'},
+  {en:'Princess', ru:'Принцесса'},
+  {en:'Ring', ru:'Колечко'},
+  {en:'Mirror', ru:'Зеркало'},
+  {en:'Rabbit', ru:'Кролик'},
+  {en:'Butterfly', ru:'Бабочка'},
+  {en:'Garden', ru:'Сад'},
+  {en:'Mother', ru:'Мама'},
+  {en:'Cake', ru:'Тортик'},
+  {en:'Pink', ru:'Розовый'},
+  {en:'Rainbow', ru:'Радуга'}
+];
+
+const STORY_LINES = [
+  {en:"Once upon a time, there was a beautiful little mermaid.", ru:"Однажды жила-была красивая маленькая русалочка."},
+  {en:"Her name was Ariel, and she had long red hair.", ru:"Её звали Ариэль, и у неё были длинные рыжие волосы."},
+  {en:"She lived deep in the magic blue ocean with her father.", ru:"Она жила глубоко в волшебном синем океане со своим отцом."},
+  {en:"Her father was King Triton, the ruler of the sea.", ru:"Её отец был царь Тритон, правитель моря."},
+  {en:"Ariel had six older sisters and many sea friends.", ru:"У Ариэль было шесть старших сестёр и много морских друзей."},
+  {en:"Her best friends were Flounder the fish and Sebastian the crab.", ru:"Её лучшими друзьями были рыбка Флаундер и краб Себастьян."},
+  {en:"She loved to sing songs about the world above the water.", ru:"Она любила петь песни о мире над водой."},
+  {en:"Ariel collected human things: forks, mirrors and books.", ru:"Ариэль коллекционировала вещи людей: вилки, зеркала и книги."},
+  {en:"One day, she saved a handsome prince from a shipwreck.", ru:"Однажды она спасла красивого принца из кораблекрушения."},
+  {en:"His name was Prince Eric, and he loved music.", ru:"Его звали принц Эрик, и он любил музыку."},
+  {en:"She fell in love with him and wanted to become human.", ru:"Она влюбилась в него и захотела стать человеком."},
+  {en:"A sea witch named Ursula gave her legs, but took her voice.", ru:"Морская ведьма Урсула дала ей ноги, но забрала её голос."},
+  {en:"Ariel had three days to make the prince fall in love.", ru:"У Ариэль было три дня, чтобы принц влюбился в неё."},
+  {en:"With the help of her friends, she won the prince's heart.", ru:"С помощью друзей она завоевала сердце принца."},
+  {en:"Her father turned her into a human forever, and she was happy.", ru:"Её отец превратил её в человека навсегда, и она была счастлива."},
+  {en:"And they lived happily ever after in the magic kingdom!", ru:"И жили они долго и счастливо в волшебном королевстве!"}
+];
+
+const MEMORY_PAIRS = [
+  {emoji:'🏰', word:'Castle'},
+  {emoji:'👑', word:'Crown'},
+  {emoji:'👗', word:'Gown'},
+  {emoji:'🦌', word:'Deer'},
+  {emoji:'💍', word:'Ring'},
+  {emoji:'🦋', word:'Butterfly'},
+  {emoji:'🍰', word:'Cake'},
+  {emoji:'🌸', word:'Pink'}
+];
+
+const TF_QUESTIONS = [
+  {text:"Cinderella lost her glass shoe at the royal ball.", answer:true},
+  {text:"Elsa creates fire and lava.", answer:false},
+  {text:"Rapunzel has very long magical hair.", answer:true},
+  {text:"Belle loves to read books in the library.", answer:true},
+  {text:"Ariel is a princess who lives in the desert.", answer:false},
+  {text:"Snow White has seven little friends (dwarfs).", answer:true},
+  {text:"Jasmine has a magic flying carpet.", answer:true},
+  {text:"Mulan is a princess who loves to sleep all day.", answer:false},
+  {text:"Moana lives on a beautiful island near the ocean.", answer:true},
+  {text:"Anna is Elsa's older sister.", answer:false},
+  {text:"Ariel has red hair and a green tail.", answer:true},
+  {text:"Belle's father's name is Maurice.", answer:true},
+  {text:"Cinderella has two stepsisters.", answer:true},
+  {text:"Rapunzel lives in a tall castle tower.", answer:true},
+  {text:"Moana's best friend is a snowman named Olaf.", answer:false}
+];
+
+const KARAOKE_WORDS = [
+  {word:'Princess', tr:'Принцесса', emoji:'👸'},
+  {word:'Castle', tr:'Замок', emoji:'🏰'},
+  {word:'Crown', tr:'Корона', emoji:'👑'},
+  {word:'Butterfly', tr:'Бабочка', emoji:'🦋'},
+  {word:'Rainbow', tr:'Радуга', emoji:'🌈'},
+  {word:'Diamond', tr:'Алмаз', emoji:'💎'},
+  {word:'Magic', tr:'Волшебство', emoji:'✨'},
+  {word:'Flower', tr:'Цветок', emoji:'🌸'},
+  {word:'Unicorn', tr:'Единорог', emoji:'🦄'},
+  {word:'Kingdom', tr:'Королевство', emoji:'🏰'},
+  {word:'Mermaid', tr:'Русалочка', emoji:'🧜‍♀️'},
+  {word:'Family', tr:'Семья', emoji:'👨‍👩‍👧'},
+  {word:'Sister', tr:'Сестра', emoji:'👧'},
+  {word:'Beautiful', tr:'Красивая', emoji:'🌺'},
+  {word:'Princess', tr:'Принцесса', emoji:'👑'}
+];
+
+const QUIZ = [
+  {q:"Which princess lost her glass shoe at the royal ball?", o:["Ariel","Cinderella","Belle","Jasmine"], c:1},
+  {q:"Rapunzel has magical, very long glowing...", o:["Shoes","Crown","Hair","Mirror"], c:2},
+  {q:"Elsa from 'Frozen' creates beautiful ice and...", o:["Fire","Snow","Flowers","Rain"], c:1},
+  {q:"Belle loves to visit the library and read...", o:["Apples","Books","Songs","Dresses"], c:1},
+  {q:"Where does Ariel the little mermaid live?", o:["In the forest","In the ocean","In a castle","In the desert"], c:1},
+  {q:"Which princess has a magic flying carpet?", o:["Cinderella","Jasmine","Belle","Aurora"], c:1},
+  {q:"How many dwarfs are friends with Snow White?", o:["3","5","7","9"], c:2},
+  {q:"What is the name of the snowman in 'Frozen'?", o:["Olaf","Sven","Kristoff","Hans"], c:0},
+  {q:"Who is Elsa's younger sister?", o:["Anna","Belle","Moana","Rapunzel"], c:0},
+  {q:"What color is Ariel's hair?", o:["Blonde","Red","Black","Brown"], c:1},
+  {q:"Which princess has a tiger friend named Rajah?", o:["Mulan","Jasmine","Moana","Tiana"], c:1},
+  {q:"Where does Mulan live?", o:["In China","In France","In Africa","In Greece"], c:0},
+  {q:"What is Rapunzel's pet chameleon called?", o:["Pascal","Sven","Flounder","Rajah"], c:0},
+  {q:"Which princess sails the ocean to save her island?", o:["Belle","Moana","Anna","Cinderella"], c:1},
+  {q:"Who is the snow queen with magic ice powers?", o:["Anna","Elsa","Aurora","Snow White"], c:1}
+];
+
+const DEFAULT_STATE = { learnt: [], score: 0, quizIdx: 0, quizAnswers: [], memoryDone: 0, tfDone: 0, hallsCompleted: {} };
+let state = JSON.parse(localStorage.getItem('magic_academy_v2') || 'null') || {...DEFAULT_STATE};
+
+function chime(){
+  try{
+    const ctx = new (window.AudioContext||window.webkitAudioContext)();
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination); o.type='sine';
+    const n = ctx.currentTime;
+    [523.25,659.25,783.99,1046.5].forEach((f,i)=>o.frequency.setValueAtTime(f,n+i*0.08));
+    g.gain.setValueAtTime(0.18,n);
+    g.gain.exponentialRampToValueAtTime(0.005,n+0.5);
+    o.start(n); o.stop(n+0.5);
+  }catch(e){}
+}
+function speak(text, lang='en-US', rate=0.8){
+  if(!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang; u.rate = rate;
+  window.speechSynthesis.speak(u);
+}
+
+let toastTimer;
+function toast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>el.classList.remove('show'), 2200);
+}
+
+function confetti(count=40){
+  const colors = ['#ff006e','#ff758f','#ffb3c1','#b14aed','#e0aaff','#ffb703','#64dfdf','#fff'];
+  for(let i=0;i<count;i++){
+    const c = document.createElement('div');
+    c.className='confetti';
+    c.style.left = Math.random()*100+'vw';
+    c.style.background = colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDuration = (2+Math.random()*2)+'s';
+    c.style.animationDelay = (Math.random()*0.4)+'s';
+    c.style.borderRadius = Math.random()>0.5?'50%':'2px';
+    c.style.width = (6+Math.random()*10)+'px';
+    c.style.height = (6+Math.random()*10)+'px';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(), 4500);
+  }
+}
+
+function switchAppSection(id){
+  document.querySelectorAll('.app-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id)?.classList.add('active');
+  document.querySelector(`nav button[data-section="${id}"]`)?.classList.add('active');
+
+  if(id !== 'view-map'){
+    document.getElementById('mainHeader').classList.add('collapsed');
+    document.getElementById('headerToggleBtn').classList.add('rotated');
+  } else {
+    document.getElementById('mainHeader').classList.remove('collapsed');
+    document.getElementById('headerToggleBtn').classList.remove('rotated');
+  }
+
+  if(id==='view-map')      buildMap();
+  if(id==='view-princess') buildPrincesses();
+  if(id==='view-lesson1')  renderWordCards('lesson1Grid', LESSON1_WORDS, 0);
+  if(id==='view-family')   renderWordCards('familyGrid', FAMILY_WORDS, 100);
+  if(id==='view-food')     renderWordCards('foodGrid', FOOD_WORDS, 200);
+  if(id==='view-colors')   renderWordCards('colorsGrid', COLORS_WORDS, 300);
+  if(id==='view-numbers')  renderWordCards('numbersGrid', NUMBERS_WORDS, 400);
+  if(id==='view-lesson2')  renderWordCards('lesson2Grid', LESSON2_WORDS, 500);
+  if(id==='view-lesson3')  buildAnimals();
+  if(id==='view-game1')    buildPairs();
+  if(id==='view-story')    buildStory();
+  if(id==='view-memory')   buildMemory();
+  if(id==='view-tf')       buildTF();
+  if(id==='view-karaoke')  initKaraoke();
+  if(id==='view-quiz')     renderQuiz();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleHeader(){
+  const header = document.getElementById('mainHeader');
+  const btn = document.getElementById('headerToggleBtn');
+  header.classList.toggle('collapsed');
+  btn.classList.toggle('rotated');
+}
+
+const HALLS = [
+  {id:'view-princess', icon:'👸', title:'Галерея Принцесс', desc:'10 принцесс Диснея и их истории'},
+  {id:'view-lesson1',  icon:'🏰', title:'Волшебный Замок', desc:'12 слов о замке и королевстве'},
+  {id:'view-family',   icon:'👨‍👩‍👧', title:'Королевская Семья', desc:'12 слов о членах семьи'},
+  {id:'view-food',     icon:'🍰', title:'Королевский Пир', desc:'12 слов про еду и напитки'},
+  {id:'view-colors',   icon:'🎨', title:'Магические Цвета', desc:'12 цветов радуги'},
+  {id:'view-numbers',  icon:'🔢', title:'Волшебные Цифры', desc:'Цифры от 1 до 12'},
+  {id:'view-lesson2',  icon:'👗', title:'Гардероб Золушки', desc:'12 слов про одежду'},
+  {id:'view-lesson3',  icon:'🦄', title:'Лесные Друзья', desc:'12 животных сказок'},
+  {id:'view-game1',    icon:'🎯', title:'Волшебные Парочки', desc:'Соедини 12 пар слов'},
+  {id:'view-story',    icon:'📖', title:'Сказка Русалочки', desc:'16 предложений про Ариэль'},
+  {id:'view-memory',   icon:'🧠', title:'Магическое Мемори', desc:'16 карточек — найди пары'},
+  {id:'view-tf',       icon:'💭', title:'Правда или Ложь', desc:'15 вопросов про принцесс'},
+  {id:'view-karaoke',  icon:'🎤', title:'Караоке', desc:'15 слов по буквам'},
+  {id:'view-quiz',     icon:'🔮', title:'Королевская Викторина', desc:'15 вопросов — финал!'}
+];
+function buildMap(){
+  const grid = document.getElementById('mapGrid');
+  grid.innerHTML = '';
+  HALLS.forEach(h=>{
+    const done = state.hallsCompleted[h.id];
+    const card = document.createElement('div');
+    card.className = 'map-card';
+    card.innerHTML = `
+      ${done?'<div class="map-card-badge">✓ ПРОЙДЕНО</div>':''}
+      <span class="map-card-icon">${h.icon}</span>
+      <div class="map-card-title">${h.title}</div>
+      <div class="map-card-desc">${h.desc}</div>
+      <div class="map-card-progress"><div class="map-card-progress-fill" style="width:${done?100:0}%"></div></div>
+    `;
+    card.onclick = ()=>switchAppSection(h.id);
+    grid.appendChild(card);
+  });
+}
+
+function buildPrincesses(){
+  const grid = document.getElementById('princessGrid');
+  grid.innerHTML = '';
+  PRINCESSES.forEach(p=>{
+    const card = document.createElement('div');
+    card.className = 'princess-card';
+    card.innerHTML = `
+      <span class="princess-emoji">${p.emoji}</span>
+      <div class="princess-name">${p.name}</div>
+      <div class="princess-from">${p.from}</div>
+      <div class="princess-info">${p.info}</div>
+      <button class="translate-btn" onclick="event.stopPropagation();speak('${p.voice.replace(/'/g,"\\'")}');toggleTranslate(this)">🌸 Слушать</button>
+      <div class="translation-pop">
+        <div class="tr-label">Семья</div>
+        <div class="tr-text">${p.family}</div>
+      </div>
+    `;
+    card.onclick = ()=>speak(p.voice);
+    grid.appendChild(card);
+  });
+}
+
+function renderWordCards(containerId, words, startId){
+  const box = document.getElementById(containerId);
+  box.innerHTML = '';
+  words.forEach((w,i)=>{
+    const id = startId + i;
+    const card = document.createElement('div');
+    card.className = 'magic-card';
+    card.id = 'card-' + id;
+    if(state.learnt.includes(id)) card.classList.add('is-read');
+    card.innerHTML = `
+      <span class="card-emoji">${w.emoji}</span>
+      <div class="card-eng-word">${w.en}</div>
+      <div class="card-transcription">${w.tr}</div>
+      <button class="translate-btn" onclick="event.stopPropagation();toggleTranslate(this)">🌸 Перевод</button>
+      <div class="translation-pop">
+        <div class="tr-label">Перевод</div>
+        <div class="tr-text">${w.emoji} ${w.ru}</div>
+      </div>
+    `;
+    card.onclick = ()=>handleWordClick(w.en, id);
+    box.appendChild(card);
+  });
+}
+function buildAnimals(){
+  const box = document.getElementById('lesson3Grid');
+  box.innerHTML = '';
+  LESSON3_WORDS.forEach((w,i)=>{
+    const id = 600 + i;
+    const card = document.createElement('div');
+    card.className = 'animal-card';
+    if(state.learnt.includes(id)) card.classList.add('is-read');
+    card.innerHTML = `
+      <span class="animal-emoji">${w.emoji}</span>
+      <div class="animal-name">${w.en}</div>
+      <div class="animal-tr">${w.tr}</div>
+      <button class="translate-btn" onclick="event.stopPropagation();toggleTranslate(this)">🌸 Перевод</button>
+      <div class="translation-pop">
+        <div class="tr-label">Перевод</div>
+        <div class="tr-text">${w.emoji} ${w.ru}</div>
+      </div>
+    `;
+    card.onclick = ()=>handleWordClick(w.en, id);
+    box.appendChild(card);
+  });
+}
+
+function toggleTranslate(btn){
+  const pop = btn.nextElementSibling;
+  pop.classList.toggle('open');
+  btn.classList.toggle('opened');
+  btn.textContent = pop.classList.contains('open') ? '🙈 Скрыть' : '🌸 Перевод';
+}
+
+function handleWordClick(eng, id){
+  speak(eng);
+  if(!state.learnt.includes(id)){
+    state.learnt.push(id);
+    state.score += 20;
+    document.getElementById('card-'+id)?.classList.add('is-read');
+    chime(); confetti(12);
+    toast(`+20! "${eng}" изучено ✨`);
+    updateUI();
+  } else {
+    toast(`"${eng}" уже изучено 🔊`);
+  }
+}
+
+let selEng=null, selRus=null, matched=0;
+function buildPairs(){
+  const eBox = document.getElementById('pairs-eng');
+  const rBox = document.getElementById('pairs-rus');
+  eBox.innerHTML=''; rBox.innerHTML='';
+  matched=0; selEng=null; selRus=null;
+  document.getElementById('pairs-next').style.display='none';
+  const shE = [...PAIRS_WORDS].sort(()=>Math.random()-0.5);
+  const shR = [...PAIRS_WORDS].sort(()=>Math.random()-0.5);
+  shE.forEach(w=>{
+    const d=document.createElement('div');
+    d.className='pair-block'; d.textContent=w.en;
+    d.onclick=()=>{
+      if(d.classList.contains('is-matched')) return;
+      eBox.querySelectorAll('.pair-block').forEach(x=>x.classList.remove('is-selected'));
+      selEng={el:d,val:w.en}; d.classList.add('is-selected');
+      speak(w.en); checkPair();
+    };
+    eBox.appendChild(d);
+  });
+  shR.forEach(w=>{
+    const d=document.createElement('div');
+    d.className='pair-block'; d.textContent=w.ru;
+    d.onclick=()=>{
+      if(d.classList.contains('is-matched')) return;
+      rBox.querySelectorAll('.pair-block').forEach(x=>x.classList.remove('is-selected'));
+      selRus={el:d,val:w.ru}; d.classList.add('is-selected'); checkPair();
+    };
+    rBox.appendChild(d);
+  });
+}
+function checkPair(){
+  if(!selEng||!selRus) return;
+  const t = PAIRS_WORDS.find(w=>w.en===selEng.val);
+  if(t && t.ru===selRus.val){
+    selEng.el.classList.remove('is-selected');
+    selRus.el.classList.remove('is-selected');
+    selEng.el.classList.add('is-matched');
+    selRus.el.classList.add('is-matched');
+    state.score += 25; matched++;
+    chime(); confetti(18); toast('Пара! +25 💖');
+    updateUI();
+    if(matched===PAIRS_WORDS.length){
+      document.getElementById('pairs-next').style.display='block';
+      state.hallsCompleted['view-game1'] = true;
+      confetti(60); toast('🎉 Все пары собраны!');
+      saveState();
+    }
+  } else {
+    const a=selEng.el, b=selRus.el;
+    a.classList.add('shake'); b.classList.add('shake');
+    setTimeout(()=>{
+      a.classList.remove('is-selected','shake');
+      b.classList.remove('is-selected','shake');
+    },500);
+  }
+  selEng=null; selRus=null;
+}
+
+function buildStory(){
+  const box = document.getElementById('storyWrapper');
+  box.innerHTML = '';
+  STORY_LINES.forEach((line,i)=>{
+    const r = document.createElement('div');
+    r.className='story-row';
+    if(state.learnt.includes('story-'+i)) r.classList.add('is-played');
+    r.innerHTML = `
+      <div class="story-line-en">📖 ${line.en}</div>
+      <button class="translate-btn" onclick="event.stopPropagation();toggleTranslate(this)">🌸 Перевод</button>
+      <div class="translation-pop">
+        <div class="tr-label">Перевод</div>
+        <div class="tr-text">${line.ru}</div>
+      </div>
+    `;
+    r.onclick = ()=>{
+      speak(line.en);
+      r.classList.add('is-played');
+      if(!state.learnt.includes('story-'+i)){
+        state.learnt.push('story-'+i);
+        state.score += 10;
+        updateUI();
+      }
+    };
+    box.appendChild(r);
+  });
+}
+
+let memFlipped=[], memMatched=0, memLock=false;
+function buildMemory(){
+  const grid = document.getElementById('memoryGrid');
+  grid.innerHTML='';
+  memFlipped=[]; memMatched=0; memLock=false;
+  document.getElementById('memNext').style.display='none';
+  const cards = [];
+  MEMORY_PAIRS.forEach((p,i)=>{
+    cards.push({type:'emoji', key:i, val:p.emoji});
+    cards.push({type:'word', key:i, val:p.word});
+  });
+  cards.sort(()=>Math.random()-0.5);
+  cards.forEach(c=>{
+    const card = document.createElement('div');
+    card.className='memory-card';
+    card.dataset.key = c.key;
+    card.dataset.type = c.type;
+    card.innerHTML = `
+      <div class="memory-inner">
+        <div class="memory-front">💖</div>
+        <div class="memory-back">
+          <span class="mem-emoji">${c.type==='emoji'?c.val:'📝'}</span>
+          <span>${c.type==='word'?c.val:'—'}</span>
+        </div>
+      </div>
+    `;
+    card.onclick = ()=>flipMemory(card);
+    grid.appendChild(card);
+  });
+}
+function flipMemory(card){
+  if(memLock||card.classList.contains('flipped')||card.classList.contains('matched')) return;
+  card.classList.add('flipped');
+  memFlipped.push(card);
+  if(memFlipped.length===2){
+    memLock = true;
+    const [a,b] = memFlipped;
+    if(a.dataset.key === b.dataset.key && a.dataset.type !== b.dataset.type){
+      a.classList.add('matched'); b.classList.add('matched');
+      memMatched++;
+      state.score += 30;
+      chime(); confetti(18); toast('Пара! +30 🧠');
+      updateUI();
+      memFlipped=[]; memLock=false;
+      if(memMatched === MEMORY_PAIRS.length){
+        document.getElementById('memNext').style.display='block';
+        state.hallsCompleted['view-memory'] = true;
+        confetti(70); toast('🎉 Всё мемори собрано!');
+        saveState();
+      }
+    } else {
+      setTimeout(()=>{
+        a.classList.remove('flipped');
+        b.classList.remove('flipped');
+        memFlipped=[]; memLock=false;
+      }, 900);
+    }
+  }
+}
+
+let tfIdx = 0, tfCorrect = 0;
+function buildTF(){ tfIdx = 0; tfCorrect = 0; renderTFQuestion(); }
+function renderTFQuestion(){
+  const wrap = document.getElementById('tfWrapper');
+  if(tfIdx >= TF_QUESTIONS.length){
+    wrap.innerHTML = `
+      <div class="victory-box">
+        <span class="victory-crown">🎉</span>
+        <h2 style="font-size:1.5rem;margin-bottom:14px;">Правда/Ложь пройдено!</h2>
+        <p style="font-size:1.05rem;color:#9c5f73;margin-bottom:20px;">Правильно: <b>${tfCorrect} из ${TF_QUESTIONS.length}</b></p>
+        <button class="navigation-action-btn" onclick="switchAppSection('view-karaoke')">Дальше: Караоке 🎤</button>
+      </div>`;
+    state.hallsCompleted['view-tf'] = true;
+    saveState();
+    return;
+  }
+  const q = TF_QUESTIONS[tfIdx];
+  wrap.innerHTML = `
+    <div class="quiz-progress-mini">${TF_QUESTIONS.map((_,i)=>{
+      let cls='quiz-dot';
+      if(i<tfIdx) cls+=' correct';
+      else if(i===tfIdx) cls+=' active';
+      return `<div class="${cls}"></div>`;
+    }).join('')}</div>
+    <div class="tf-question">
+      <div class="tf-text">${q.text}</div>
+      <div class="tf-buttons">
+        <button class="tf-btn true-btn" onclick="answerTF(true)">✓ TRUE</button>
+        <button class="tf-btn false-btn" onclick="answerTF(false)">✗ FALSE</button>
+      </div>
+    </div>
+    <div style="text-align:center;font-size:0.85rem;color:#9c5f73;margin-top:12px;">Вопрос ${tfIdx+1} из ${TF_QUESTIONS.length}</div>
+  `;
+}
+function answerTF(ans){
+  const q = TF_QUESTIONS[tfIdx];
+  document.querySelectorAll('.tf-btn').forEach(b=>b.disabled = true);
+  if(ans === q.answer){
+    state.score += 35;
+    tfCorrect++;
+    chime(); confetti(18); toast('Верно! +35 🏆');
+  } else {
+    toast('Не угадала 🤔');
+  }
+  updateUI();
+  tfIdx++;
+  setTimeout(renderTFQuestion, 1400);
+}
+
+let kIdx = 0, kTrOpen = false;
+function initKaraoke(){ kIdx = 0; kTrOpen = false; karaokeRender(); }
+function karaokeRender(){
+  const w = KARAOKE_WORDS[kIdx];
+  const wordEl = document.getElementById('karaokeWord');
+  wordEl.innerHTML = w.word.split('').map(l=>`<span class="letter">${l}</span>`).join('');
+  document.getElementById('karaokeEmoji').textContent = w.emoji;
+  document.getElementById('karaokeTr').textContent = kTrOpen ? '🌸 ' + w.tr : '—';
+  document.getElementById('karaokeProgress').style.width = ((kIdx)/KARAOKE_WORDS.length*100)+'%';
+  document.getElementById('karaokeCounter').textContent = `Слово ${kIdx+1} из ${KARAOKE_WORDS.length}`;
+}
+function karaokePlay(){
+  const w = KARAOKE_WORDS[kIdx];
+  const letters = document.querySelectorAll('#karaokeWord .letter');
+  letters.forEach(l=>l.classList.remove('active'));
+  letters.forEach((l,i)=>{
+    setTimeout(()=>{
+      letters.forEach(x=>x.classList.remove('active'));
+      l.classList.add('active');
+    }, i*240);
+  });
+  setTimeout(()=>letters.forEach(x=>x.classList.remove('active')), letters.length*240+400);
+  speak(w.word, 'en-US', 0.7);
+  if(!state.learnt.includes('karaoke-'+kIdx)){
+    state.learnt.push('karaoke-'+kIdx);
+    state.score += 15;
+    chime();
+    updateUI();
+  }
+}
+function karaokeNext(){
+  kIdx = (kIdx + 1) % KARAOKE_WORDS.length;
+  if(kIdx === 0){
+    state.hallsCompleted['view-karaoke'] = true;
+    saveState();
+    confetti(60); toast('🎉 Караоке пройдено!');
+  }
+  karaokeRender();
+}
+function karaokeToggleTr(){ kTrOpen = !kTrOpen; karaokeRender(); }
+
+function renderQuiz(){
+  const t = document.getElementById('quizTarget');
+  if(state.quizIdx >= QUIZ.length){
+    t.innerHTML = `
+      <div class="victory-box">
+        <span class="victory-crown">👑</span>
+        <h2>Ты Королева Знаний!</h2>
+        <p style="font-size:1.1rem;color:#9c5f73;margin-bottom:10px;">Ты набрала <b>${state.score}</b> очков!</p>
+        <p style="font-size:0.95rem;color:#9c5f73;margin-bottom:22px;">Ты — настоящая принцесса английского! 💖</p>
+        <button class="navigation-action-btn" onclick="resetAll()">Пройти заново 🔄</button>
+      </div>`;
+    state.hallsCompleted['view-quiz'] = true;
+    saveState();
+    confetti(120);
+    return;
+  }
+  const q = QUIZ[state.quizIdx];
+  const dots = QUIZ.map((_,i)=>{
+    let cls='quiz-dot';
+    if(i<state.quizAnswers.length){
+      cls += state.quizAnswers[i]===QUIZ[i].c ? ' correct' : ' wrong';
+    } else if(i===state.quizIdx){ cls += ' active'; }
+    return `<div class="${cls}"></div>`;
+  }).join('');
+  const opts = q.o.map((o,i)=>`<button class="quiz-option-btn" onclick="answerQuiz(${i})">👸 ${o}</button>`).join('');
+  t.innerHTML = `
+    <div class="quiz-progress-mini">${dots}</div>
+    <div class="quiz-question-title">⭐ Вопрос ${state.quizIdx+1}: ${q.q}</div>
+    <div class="quiz-options-list">${opts}</div>
+  `;
+}
+function answerQuiz(idx){
+  const q = QUIZ[state.quizIdx];
+  const btns = document.querySelectorAll('.quiz-option-btn');
+  btns.forEach(b=>b.disabled=true);
+  state.quizAnswers[state.quizIdx] = idx;
+  if(idx===q.c){
+    btns[idx].classList.add('state-correct');
+    state.score += 50;
+    chime(); confetti(30); toast('Верно! +50 🏆');
+  } else {
+    btns[idx].classList.add('state-wrong');
+    btns[q.c].classList.add('state-correct');
+    toast('Почти! Правильный подсвечен 💡');
+  }
+  state.quizIdx++;
+  updateUI();
+  setTimeout(renderQuiz, 2000);
+}
+
+function updateUI(){
+  document.getElementById('starsCount').textContent = state.learnt.length;
+  document.getElementById('scoreCount').textContent = state.score;
+  const rank = state.score >= 3000 ? 'Королева 👑' :
+               state.score >= 2000 ? 'Принцесса 💎' :
+               state.score >= 1200 ? 'Герцогиня 💖' :
+               state.score >= 600  ? 'Леди 🌸' : 'Новичок';
+  document.getElementById('rankLabel').textContent = rank;
+  const totalWords = LESSON1_WORDS.length + FAMILY_WORDS.length + FOOD_WORDS.length +
+    COLORS_WORDS.length + NUMBERS_WORDS.length + LESSON2_WORDS.length + LESSON3_WORDS.length +
+    STORY_LINES.length + KARAOKE_WORDS.length + PRINCESSES.length;
+  const totalTasks = totalWords + QUIZ.length + TF_QUESTIONS.length + PAIRS_WORDS.length + MEMORY_PAIRS.length;
+  const done = state.learnt.length + state.quizIdx;
+  let pct = Math.min(100, Math.round(done / totalTasks * 100));
+  document.getElementById('progressBar').style.width = pct+'%';
+  document.getElementById('progressLabel').textContent = `Progress: ${pct}%`;
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('completed'));
+  Object.keys(state.hallsCompleted).forEach(id=>{
+    document.querySelector(`nav button[data-section="${id}"]`)?.classList.add('completed');
+  });
+  saveState();
+}
+function saveState(){ localStorage.setItem('magic_academy_v2', JSON.stringify(state)); }
+
+function resetAll(){
+  if(!confirm('Начать обучение заново?')) return;
+  state = {...DEFAULT_STATE, learnt:[], score:0, quizIdx:0, quizAnswers:[], hallsCompleted:{}};
+  document.querySelectorAll('.magic-card,.animal-card').forEach(c=>c.classList.remove('is-read'));
+  document.querySelectorAll('.story-row').forEach(c=>c.classList.remove('is-played'));
+  updateUI();
+  switchAppSection('view-map');
+  toast('Обучение начато заново! 💫');
+}
+
+function openAvatarModal(){ document.getElementById('avatarModal').classList.add('show'); }
+function closeAvatarModal(){ document.getElementById('avatarModal').classList.remove('show'); }
+function saveAvatar(){
+  const input = document.getElementById('avatarInput');
+  const file = input.files[0];
+  if(!file){ toast('Сначала выбери картинку 📷'); return; }
+  const reader = new FileReader();
+  reader.onload = (e)=>{
+    const dataUrl = e.target.result;
+    document.getElementById('avatarBox').innerHTML = `<img src="${dataUrl}" alt="avatar">`;
+    try{
+      localStorage.setItem('princess_avatar', dataUrl);
+      toast('Фото сохранено! 👑');
+    }catch(err){ toast('Фото большое — сохранил на сессию'); }
+    closeAvatarModal();
+    confetti(30);
+  };
+  reader.readAsDataURL(file);
+}
+function loadAvatar(){
+  const saved = localStorage.getItem('princess_avatar');
+  if(saved) document.getElementById('avatarBox').innerHTML = `<img src="${saved}" alt="avatar">`;
+}
+
+updateUI();
+loadAvatar();
+buildMap();
+</script>
+</body>
+</html>
